@@ -18,7 +18,7 @@ public class MyUserDetailService implements UserDetailsService {
 			throws UsernameNotFoundException, DataAccessException {
 		Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
 		GrantedAuthorityImpl auth2 = new GrantedAuthorityImpl("ROLE_ADMIN");
-		if (username.equals("cyu")) { 
+		if (username.equals("cyu")) {
 			auths = new ArrayList<GrantedAuthority>(); 
 			GrantedAuthorityImpl auth1 = new GrantedAuthorityImpl("ROLE_USER"); 
 			auths.add(auth1); 

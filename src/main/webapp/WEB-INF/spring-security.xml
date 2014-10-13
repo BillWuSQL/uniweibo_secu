@@ -6,7 +6,7 @@
     http://www.springframework.org/schema/security
     http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
   
-    <http auto-config="true">
+    <http auto-config="true" create-session="never" > 
 <!--         <intercept-url pattern="/welcome*" access="ROLE_USER" /> -->
 <!-- 		<intercept-url pattern="/css/**" filters="none"/> -->
 <!-- 		<intercept-url pattern="/js/**" filters="none"/> -->
@@ -15,9 +15,9 @@
 		<intercept-url pattern="/**" access="ROLE_USER"/>
 <!-- 		<form-login login-page='/login.jsp'/> -->
 <!-- 		<form-login login-page='/login.htm' default-target-url='/home.htm' always-use-default-target='true'/> -->
-<!-- 		<session-management > invalid-session-url="/login_sessiontimeout.jsp" -->
-<!-- 			<concurrency-control max-sessions="1"  /> error-if-maximum-exceeded="true" -->
-<!-- 		</session-management> -->
+		<session-management > <!--  invalid-session-url="/login_sessiontimeout.jsp" -->
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" /> 
+		</session-management>
 		
 		<!--增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，这个filter位于FILTER_SECURITY_INTERCEPTOR之前 -->
 <!-- 		<custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR"/> -->
